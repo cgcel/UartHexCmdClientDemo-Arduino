@@ -5,7 +5,6 @@
     @brief: Send a hex cmd via serial, and Arduino returns you a responce data.
 */
 
-#include "string.h"
 
 /* define recv_cmd and resp_data by yourself */
 uint8_t recv_cmd[] = {0x01, 0x04, 0x00, 0x00, 0x00, 0x08, 0xf1, 0xcc};
@@ -28,7 +27,7 @@ void loop() {
     recv_data[index] = b; // store the incoming byte to recv_data
     index++;
   }
-  
+
   // compare recv_data with recv_cmd
   if (index == sizeof(recv_cmd)) {
     for (int i = 0; i < sizeof(recv_data); i++) {
